@@ -34,7 +34,7 @@ neptune-triton = "=1.0.0"
 
 [dependencies.filecoin-proofs-api]
 git = "https://github.com/diancun/rust-filecoin-proofs-api.git"
-branch = "master"
+branch = "qn_541"
 
 [build-dependencies]
 cbindgen = "= 0.14.0"
