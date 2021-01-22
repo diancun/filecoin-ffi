@@ -34,10 +34,9 @@ serde_json = "1.0.46"
 rust-gpu-tools = "0.2.0"
 
 [dependencies.filecoin-proofs-api]
-filecoin-proofs-api = {version = "5.4.1", optional = true }
-qn-api = {git = "https://github.com/diancun/rust-filecoin-proofs-api.git", branch = "qn_140_541", optional = true }
-dc-api = {git = "https://github.com/diancun/rust-filecoin-proofs-api.git", branch = "api_v5.4.1", optional = true }
-
+package = "filecoin-proofs-api"
+version = "5.4.1"
+default-features = false
 
 [build-dependencies]
 cbindgen = "= 0.14.0"
@@ -46,8 +45,6 @@ cbindgen = "= 0.14.0"
 tempfile = "3.0.8"
 
 [features]
-default = ["pairing", "filecoin-proofs-api"]
+default = ["pairing"]
 pairing = ["filecoin-proofs-api/pairing", "bellperson/pairing"]
 blst = ["filecoin-proofs-api/blst", "bellperson/blst"]
-qiniu = ["qn-api"]
-diancun = ["dc-api"]
