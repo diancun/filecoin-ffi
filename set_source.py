@@ -5,7 +5,7 @@ import sys
 def generate_toml(src):
     link_source = ''
     diancun = 'filecoin-proofs-api = {package = "filecoin-proofs-api", git = "https://github.com/diancun/rust-filecoin-proofs-api.git", branch = "api_v7.0.0" }'
-    qiniu = 'filecoin-proofs-api = {package = "filecoin-proofs-api", git = "https://github.com/diancun/rust-filecoin-proofs-api.git", branch = "api_v7.0.0" }'
+    qiniu = 'filecoin-proofs-api = {package = "filecoin-proofs-api", git = "https://github.com/diancun/rust-filecoin-proofs-api.git", branch = "qn_700_103" }'
 
     if sys.argv[1] == 'diancun':
         print '****************Linking to diancun source****************.'
