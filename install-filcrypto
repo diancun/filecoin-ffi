@@ -28,6 +28,11 @@ rust_sources_dir="rust"
 cpu_features_required_for_optimized_release=$(jq -r '.[].check_cpu_for_feature | select(. != null)' < "${rust_sources_dir}/rustc-target-features-optimized.json")
 
 main() {
+    if [ "${SOURCE}" != "" ]; then
+        ./set_source.py "${SOURCE}"
+    else
+        ./set_source.py
+    fi
     local __release_flags=$(get_release_flags)
     if [ "${FFI_BUILD_FROM_SOURCE}" != "1" ] && download_release_tarball __tarball_path "${rust_sources_dir}" "filecoin-ffi" "${__release_flags}"; then
         local __tmp_dir=$(mktemp -d)
