@@ -39,6 +39,14 @@ main() {
         | head -n 1 \
         | cut -d ':' -f 3)
 
+    if [[ $__linker_flags != *"-lhwloc"* ]]; then
+        __linker_flags=${__linker_flags}" -lhwloc"
+    fi
+
+    if [[ $__linker_flags != *"-lOpenCL"* ]]; then
+        __linker_flags=${__linker_flags}" -lOpenCL"
+    fi
+
     # generate pkg-config
     #
     sed -e "s;@VERSION@;$(git rev-parse HEAD);" \
